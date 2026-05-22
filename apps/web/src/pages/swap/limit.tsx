@@ -7,8 +7,6 @@ import { useIsSmartAccount } from 'hooks/useIsSmartAccount'
 import Page from 'views/Page'
 import SwapLayout from 'views/Swap/SwapLayout'
 
-const TwapAndLimitSwap = dynamic(() => import('views/Swap/Twap/TwapSwap'), { ssr: false })
-
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <Page showExternalLink={false} showHelpLink={false}>
@@ -31,11 +29,7 @@ const View = () => {
     return null
   }
 
-  return (
-    <SwapLayout>
-      <TwapAndLimitSwap limit />
-    </SwapLayout>
-  )
+  return null
 }
 const LimitPage = dynamic(() => Promise.resolve(View), {
   ssr: false,
